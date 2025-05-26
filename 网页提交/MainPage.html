@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload File and Text</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+            h1, h3 {
+                text-align: center;
+            }
+            form {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            textarea {
+            width: 100%;   /* 设置宽度为100%（自适应宽度） */
+            height: 200px; /* 设置固定高度，适合大多数设备 */
+            max-width: 100%; /* 最大宽度为100%（防止超出屏幕） */
+            box-sizing: border-box; /* 保证内边距也计算在宽度内 */
+        }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>提交助手</h1>
+        <h3>选择需要提交文件或在文本框内输入文本</h3>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">请选择您想要提交的文件:</label>
+            <h4>⚠️支持多选文件一起上传⚠️</h4>
+            <input type="file" name="file" id="file" multiple><br><br>
+
+            <label for="text_content">在这里输入文本👇:</label><br><br>
+            <textarea name="text_content" id="text_content"></textarea><br>
+            <h4>右下角的小三角可以调整文本框大小</h4>
+            <br>
+
+
+            <button type="submit">提交</button>
+            <p>By 李浩铭<p/>
+        </form>
+    </body>
+    </html>
